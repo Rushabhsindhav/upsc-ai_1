@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 
-// ⚠️ EDIT THESE TWO LINES with your real profile URLs before deploying:
-const LINKEDIN_URL = "https://linkedin.com/in/your-profile-here";
-const INSTAGRAM_URL = "https://instagram.com/your-profile-here";
+const LINKEDIN_URL = "https://www.linkedin.com/in/rushabhsindhav";
+const INSTAGRAM_URL = "https://www.instagram.com/unfiltered_rushabh";
 
 export default function BrandingPopup() {
   const [open, setOpen] = useState(false);
@@ -13,7 +12,7 @@ export default function BrandingPopup() {
     <div style={styles.wrap}>
       {open && (
         <div style={styles.menu}>
-          <a
+          
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -21,7 +20,7 @@ export default function BrandingPopup() {
           >
             <span style={styles.icon}>in</span> LinkedIn
           </a>
-          <a
+          
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
