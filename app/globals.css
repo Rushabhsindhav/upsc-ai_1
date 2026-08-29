@@ -22,8 +22,82 @@ h1, h2, h3 {
   to { transform: rotate(360deg); }
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(99,102,241,0.4)); }
+  50% { filter: drop-shadow(0 0 10px rgba(99,102,241,0.8)); }
+}
+
+@keyframes stripeDrift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 0; }
+}
+
 .tricolor-bar {
   height: 3px;
   width: 100%;
   background: linear-gradient(90deg, #FF9933 0%, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%, #138808 100%);
+}
+
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: repeating-linear-gradient(135deg, #FF9933 0px, #FF9933 2px, transparent 2px, transparent 40px, #138808 40px, #138808 42px, transparent 42px, transparent 80px);
+  animation: stripeDrift 12s linear infinite;
+}
+
+.message-anim {
+  animation: fadeInUp 0.35s ease-out both;
+}
+
+.card-anim {
+  animation: cardEnter 0.5s ease-out both;
+}
+
+.glow-icon {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.chip {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: #6366f1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.send-btn-glow {
+  transition: all 0.2s ease;
+}
+
+.send-btn-glow:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(99,102,241,0.5);
+}
+
+.input-glow:focus {
+  outline: none;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
 }
