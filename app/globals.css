@@ -9,6 +9,21 @@ body {
   color: #e2e8f0;
 }
 
+h1, h2, h3 {
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+}
+
 ::placeholder {
   color: #64748b;
+}
+
+@keyframes chakra-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.tricolor-bar {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #FF9933 0%, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%, #138808 100%);
 }

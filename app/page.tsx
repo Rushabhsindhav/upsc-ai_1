@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import BrandingPopup from "@/components/BrandingPopup";
+import ChakraIcon from "@/components/ChakraIcon";
 
 type Message = {
   role: "user" | "assistant";
@@ -68,7 +70,9 @@ export default function Home() {
 
   return (
     <main style={styles.main}>
+      <div className="tricolor-bar" />
       <header style={styles.header}>
+        <ChakraIcon size={28} />
         <h1 style={styles.title}>UPSC AI</h1>
         <span style={styles.badge}>open source · v0</span>
       </header>
@@ -91,7 +95,8 @@ export default function Home() {
           </div>
         ))}
         {loading && (
-          <div style={{ ...styles.bubble, ...styles.aiBubble }}>
+          <div style={{ ...styles.bubble, ...styles.aiBubble, display: "flex", alignItems: "center", gap: "0.6rem" }}>
+            <ChakraIcon size={18} spin />
             Thinking...
           </div>
         )}
@@ -110,6 +115,7 @@ export default function Home() {
           Send
         </button>
       </div>
+      <BrandingPopup />
     </main>
   );
 }
@@ -129,7 +135,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "1rem",
     borderBottom: "1px solid #1e293b",
   },
-  title: { margin: 0, fontSize: "1.25rem" },
+  title: { margin: 0, fontSize: "1.25rem", fontFamily: "'Merriweather', Georgia, serif", fontWeight: 700 },
   badge: {
     fontSize: "0.7rem",
     color: "#94a3b8",

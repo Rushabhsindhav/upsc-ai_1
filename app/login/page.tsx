@@ -1,9 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import ChakraIcon from "@/components/ChakraIcon";
 
 export default function LoginPage() {
+  return (
+    <Suspense fallback={null}>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,6 +44,9 @@ export default function LoginPage() {
   return (
     <main style={styles.wrap}>
       <form onSubmit={handleSubmit} style={styles.card}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "0.75rem" }}>
+          <ChakraIcon size={40} />
+        </div>
         <h1 style={styles.title}>UPSC AI</h1>
         <p style={styles.subtitle}>Enter the access password to continue</p>
         <input
@@ -70,8 +82,10 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     maxWidth: "360px",
     boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+    borderTop: "4px solid transparent",
+    borderImage: "linear-gradient(90deg, #FF9933, #FFFFFF, #138808) 1",
   },
-  title: { color: "#fff", margin: 0, fontSize: "1.5rem" },
+  title: { color: "#fff", margin: 0, fontSize: "1.5rem", fontFamily: "'Merriweather', Georgia, serif", textAlign: "center" },
   subtitle: { color: "#94a3b8", marginTop: "0.25rem", fontSize: "0.9rem" },
   input: {
     width: "100%",
