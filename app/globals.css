@@ -96,6 +96,18 @@ h1, h2, h3 {
   box-shadow: 0 4px 14px rgba(99,102,241,0.5);
 }
 
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .input-glow:focus {
   outline: none;
   border-color: #6366f1 !important;
