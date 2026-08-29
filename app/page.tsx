@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import BrandingPopup from "@/components/BrandingPopup";
 import ChakraIcon from "@/components/ChakraIcon";
 
@@ -89,6 +90,9 @@ export default function Home() {
           <ChakraIcon size={30} />
         </div>
         <h1 style={styles.title}>UPSC AI</h1>
+        <Link href="/syllabus" style={styles.navLink}>
+          Syllabus & Weightage
+        </Link>
         <span style={styles.badge}>open source · v0</span>
       </header>
 
@@ -201,6 +205,12 @@ const styles: Record<string, React.CSSProperties> = {
     background: "#1e293b",
     padding: "0.2rem 0.5rem",
     borderRadius: "999px",
+  },
+  navLink: {
+    marginLeft: "auto",
+    color: "#94a3b8",
+    fontSize: "0.85rem",
+    textDecoration: "none",
   },
   chatArea: {
     flex: 1,
