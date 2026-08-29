@@ -90,9 +90,14 @@ export default function Home() {
           <ChakraIcon size={30} />
         </div>
         <h1 style={styles.title}>UPSC AI</h1>
-        <Link href="/syllabus" style={styles.navLink}>
-          Syllabus & Weightage
-        </Link>
+        <nav style={styles.nav}>
+          <Link href="/syllabus" style={styles.navLink}>
+            Syllabus & Weightage
+          </Link>
+          <Link href="/calculator" style={styles.navLink}>
+            Marks Calculator
+          </Link>
+        </nav>
         <span style={styles.badge}>open source · v0</span>
       </header>
 
@@ -207,10 +212,14 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: "999px",
   },
   navLink: {
-    marginLeft: "auto",
     color: "#94a3b8",
     fontSize: "0.85rem",
     textDecoration: "none",
+  },
+  nav: {
+    marginLeft: "auto",
+    display: "flex",
+    gap: "1rem",
   },
   chatArea: {
     flex: 1,
