@@ -51,6 +51,9 @@ export default function SyllabusPage() {
           <ChakraIcon size={26} />
         </div>
         <h1 style={styles.headerTitle}>Syllabus & Weightage</h1>
+        <Link href="/calculator" style={{ ...styles.backLink, marginLeft: "auto" }}>
+          Marks Calculator →
+        </Link>
       </header>
 
       <div style={styles.content}>
