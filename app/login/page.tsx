@@ -43,8 +43,8 @@ function LoginForm() {
 
   return (
     <main style={styles.wrap}>
-      <form onSubmit={handleSubmit} style={styles.card}>
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "0.75rem" }}>
+      <form onSubmit={handleSubmit} className="card-anim" style={styles.card}>
+        <div className="glow-icon" style={{ display: "flex", justifyContent: "center", marginBottom: "0.75rem" }}>
           <ChakraIcon size={40} />
         </div>
         <h1 style={styles.title}>UPSC AI</h1>
@@ -54,11 +54,12 @@ function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          className="input-glow"
           style={styles.input}
           autoFocus
         />
         {error && <p style={styles.error}>{error}</p>}
-        <button type="submit" disabled={loading} style={styles.button}>
+        <button type="submit" disabled={loading} className="send-btn-glow" style={styles.button}>
           {loading ? "Checking..." : "Enter"}
         </button>
       </form>
