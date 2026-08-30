@@ -58,6 +58,63 @@ h1, h2, h3 {
   animation: stripeDrift 12s linear infinite;
 }
 
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.16;
+}
+
+.blob-saffron {
+  width: 480px;
+  height: 480px;
+  background: #FF9933;
+  top: -160px;
+  left: -140px;
+  animation: blobFloat1 20s ease-in-out infinite;
+}
+
+.blob-indigo {
+  width: 420px;
+  height: 420px;
+  background: #6366f1;
+  bottom: -160px;
+  right: -120px;
+  animation: blobFloat2 24s ease-in-out infinite;
+}
+
+.blob-green {
+  width: 380px;
+  height: 380px;
+  background: #138808;
+  top: 35%;
+  left: 55%;
+  animation: blobFloat3 28s ease-in-out infinite;
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(70px, 50px); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-60px, -40px); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 30px) scale(1.08); }
+}
+
 .message-anim {
   animation: fadeInUp 0.35s ease-out both;
 }
@@ -112,4 +169,45 @@ h1, h2, h3 {
   outline: none;
   border-color: #6366f1 !important;
   box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chip-row .chip {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.chip-row .chip:nth-child(1) { animation-delay: 0.05s; }
+.chip-row .chip:nth-child(2) { animation-delay: 0.12s; }
+.chip-row .chip:nth-child(3) { animation-delay: 0.19s; }
+.chip-row .chip:nth-child(4) { animation-delay: 0.26s; }
+.chip-row .chip:nth-child(5) { animation-delay: 0.33s; }
+
+.row-hover:hover {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.panel-accent-indigo {
+  border-top: 3px solid #6366f1;
+}
+
+.panel-accent-green {
+  border-top: 3px solid #138808;
+}
+
+.soft-card {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.brand-title-lg {
+  letter-spacing: -0.01em;
 }
