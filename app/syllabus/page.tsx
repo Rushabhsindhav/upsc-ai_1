@@ -41,9 +41,13 @@ const priorityColor: Record<string, string> = {
 export default function SyllabusPage() {
   return (
     <main style={styles.main}>
-      <div className="bg-pattern" />
+      <div className="bg-mesh">
+        <div className="blob blob-saffron" />
+        <div className="blob blob-indigo" />
+        <div className="blob blob-green" />
+      </div>
       <div className="tricolor-bar" style={{ position: "relative", zIndex: 1 }} />
-      <header style={styles.header}>
+      <header className="site-header" style={styles.header}>
         <Link href="/" style={styles.backLink}>
           ← Back to chat
         </Link>
@@ -57,7 +61,7 @@ export default function SyllabusPage() {
       </header>
 
       <div style={styles.content}>
-        <section className="card-anim" style={styles.section}>
+        <section className="card-anim soft-card" style={styles.section}>
           <h2 style={styles.h2}>UPSC Prelims — GS Paper I & CSAT</h2>
           <p style={styles.p}>
             Prelims is a qualifying stage (200 marks GS Paper I, scored; 200 marks CSAT, qualifying-only at 33%).
@@ -70,7 +74,7 @@ export default function SyllabusPage() {
           </ul>
         </section>
 
-        <section className="card-anim" style={styles.section}>
+        <section className="card-anim soft-card" style={styles.section}>
           <h2 style={styles.h2}>Subject-Wise Preparation Priority</h2>
           <p style={styles.p}>
             Based on how frequently each area has appeared across recent Prelims papers — useful for allocating
@@ -86,7 +90,7 @@ export default function SyllabusPage() {
               </thead>
               <tbody>
                 {WEIGHTAGE.map((row) => (
-                  <tr key={row.subject}>
+                  <tr key={row.subject} className="row-hover">
                     <td style={styles.td}>{row.subject}</td>
                     <td style={styles.td}>
                       <span
@@ -106,7 +110,7 @@ export default function SyllabusPage() {
           </div>
         </section>
 
-        <section className="card-anim" style={styles.section}>
+        <section className="card-anim soft-card" style={styles.section}>
           <h2 style={styles.h2}>UPSC Mains — Written Papers</h2>
           <p style={styles.p}>
             Nine papers total, of which seven count toward the merit rank (Essay + GS I–IV + two Optional papers);
@@ -122,7 +126,7 @@ export default function SyllabusPage() {
               </thead>
               <tbody>
                 {MAINS_PAPERS.map((row) => (
-                  <tr key={row.paper}>
+                  <tr key={row.paper} className="row-hover">
                     <td style={{ ...styles.td, fontWeight: 600 }}>{row.paper}</td>
                     <td style={styles.td}>{row.detail}</td>
                   </tr>
@@ -132,7 +136,7 @@ export default function SyllabusPage() {
           </div>
         </section>
 
-        <section className="card-anim" style={{ ...styles.section, textAlign: "center" }}>
+        <section className="card-anim soft-card" style={{ ...styles.section, textAlign: "center" }}>
           <p style={styles.p}>Have a question about any of these topics?</p>
           <Link href="/" style={styles.ctaBtn}>
             Ask UPSC AI →
