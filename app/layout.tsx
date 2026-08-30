@@ -5,6 +5,10 @@ export const metadata = {
   description: "An open-source AI study companion for UPSC CSE aspirants",
 };
 
+export const viewport = {
+  themeColor: "#0f172a",
+};
+
 export default function RootLayout({
   children,
 }: {
