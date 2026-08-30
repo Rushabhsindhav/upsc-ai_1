@@ -42,9 +42,13 @@ export default function CalculatorPage() {
 
   return (
     <main style={styles.main}>
-      <div className="bg-pattern" />
+      <div className="bg-mesh">
+        <div className="blob blob-saffron" />
+        <div className="blob blob-indigo" />
+        <div className="blob blob-green" />
+      </div>
       <div className="tricolor-bar" style={{ position: "relative", zIndex: 1 }} />
-      <header style={styles.header}>
+      <header className="site-header" style={styles.header}>
         <Link href="/" style={styles.backLink}>
           ← Back to chat
         </Link>
@@ -65,7 +69,7 @@ export default function CalculatorPage() {
 
         <div className="calc-grid">
           {/* GS Paper I */}
-          <div className="card-anim" style={styles.panel}>
+          <div className="card-anim soft-card panel-accent-indigo" style={styles.panel}>
             <div style={styles.panelHeader}>
               <span style={styles.panelLabel}>PAPER I · MERIT RANKING</span>
               <h2 style={styles.panelTitle}>General Studies</h2>
@@ -113,7 +117,7 @@ export default function CalculatorPage() {
           </div>
 
           {/* CSAT */}
-          <div className="card-anim" style={styles.panel}>
+          <div className="card-anim soft-card panel-accent-green" style={styles.panel}>
             <div style={styles.panelHeader}>
               <span style={{ ...styles.panelLabel, color: "#22c55e" }}>PAPER II · QUALIFYING</span>
               <h2 style={styles.panelTitle}>CSAT</h2>
@@ -170,7 +174,7 @@ export default function CalculatorPage() {
         </div>
 
         <div
-          className="card-anim"
+          className="card-anim soft-card"
           style={{
             ...styles.summary,
             borderColor: csatPassed && gsClearsReference ? "#22c55e" : "#334155",
