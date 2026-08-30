@@ -83,13 +83,17 @@ export default function Home() {
 
   return (
     <main style={styles.main}>
-      <div className="bg-pattern" />
+      <div className="bg-mesh">
+        <div className="blob blob-saffron" />
+        <div className="blob blob-indigo" />
+        <div className="blob blob-green" />
+      </div>
       <div className="tricolor-bar" style={{ position: "relative", zIndex: 1 }} />
-      <header style={styles.header}>
+      <header className="site-header" style={styles.header}>
         <div className="glow-icon">
           <ChakraIcon size={30} />
         </div>
-        <h1 style={styles.title}>UPSC AI</h1>
+        <h1 className="brand-title-lg" style={styles.title}>UPSC AI</h1>
         <nav style={styles.nav}>
           <Link href="/syllabus" style={styles.navLink}>
             Syllabus & Weightage
@@ -103,13 +107,13 @@ export default function Home() {
 
       <div style={styles.chatArea}>
         {showHero && (
-          <div className="card-anim" style={styles.hero}>
+          <div className="card-anim soft-card" style={styles.hero}>
             <ChakraIcon size={48} />
             <h2 style={styles.heroTitle}>Your UPSC prep companion</h2>
             <p style={styles.heroSubtitle}>
               Pick a subject to get started, or ask your own question below.
             </p>
-            <div style={styles.chipRow}>
+            <div className="chip-row" style={styles.chipRow}>
               {TOPIC_CHIPS.map((c) => (
                 <button
                   key={c.label}
@@ -126,7 +130,7 @@ export default function Home() {
         {messages.map((m, i) => (
           <div
             key={i}
-            className="message-anim"
+            className="message-anim soft-card"
             style={{
               ...styles.bubble,
               ...(m.role === "user" ? styles.userBubble : styles.aiBubble),
